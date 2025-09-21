@@ -10,8 +10,18 @@ dotenv.config();
 
 const port = process.env.PORT || 3000;
 
+
+const allowedOrigins = [
+  "http://localhost:3000", // for Next.js dev
+  "https://terminus-4avn.vercel.app/", // when you deploy frontend
+];
+
+
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true,
+}));
 app.use(express.json());
 app.use(cookieParser());
 app.use("/api/users", userRoutes);
