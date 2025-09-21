@@ -13,7 +13,7 @@ const port = process.env.PORT || 3000;
 
 const allowedOrigins = [
   "http://localhost:3000", // for Next.js dev
-  "https://terminus-4avn.vercel.app/", // when you deploy frontend
+  "https://terminus-4avn.vercel.app", // when you deploy frontend
 ];
 
 
